@@ -1,0 +1,48 @@
+```
+selectServer.title=Выберите сервер
+selectServer.empty=пусто
+selectServer.select=Подключиться к серверу
+selectServer.direct=Прямое подключение
+selectServer.edit=Редактировать
+selectServer.delete=Удалить
+selectServer.add=Добавить сервер
+selectServer.defaultName=Сервер Minecraft
+selectServer.deleteQuestion=Вы уверены, что хотите удалить этот сервер?
+selectServer.deleteWarning=он будет потерян навсегда! (Надолго!)
+selectServer.deleteButton=Удалить
+selectServer.refresh=Обновить
+addServer.title=Редактировать информацию о сервере
+addServer.enterName=Имя сервера
+addServer.enterIp=Адрес сервера
+addServer.add=Готово
+
+multiplayer.title=Играть по сети
+multiplayer.connect=Подключиться
+multiplayer.warning=ВНИМАНИЕ:
+multiplayer.info1=Многопользовательская игра находится на очень ранней стадии разработки
+multiplayer.info2=и в ней будет много ошибок.
+multiplayer.info3=Не ждите, что она будет закончена в ближайшее время.
+multiplayer.ipinfo=Введите IP сервера для подключения к нему:
+multiplayer.downloadingTerrain=Загрузка местности
+multiplayer.stopSleeping=Встать с кровати
+
+chat.link.confirm=Вы уверены, что хотите открыть следующий URL?
+chat.link.warning=Никогда не открывайте ссылки от людей, которым вы не доверяете!
+chat.copy=Копировать в буфер обмена
+
+connect.connecting=Подключение к %1$s...
+connect.authorizing=Вход в систему...
+connect.failed=Не удалось подключиться к серверу
+
+disconnect.genericReason=%s
+disconnect.disconnected=Отключено сервером
+disconnect.lost=Потеряно соединение
+disconnect.kicked=Изгнан из игры
+disconnect.timeout=Превышено время ожидания
+disconnect.closed=Соединение закрыто
+disconnect.loginFailed=Не удалось войти
+disconnect.loginFailedInfo=Не удалось войти: %s
+disconnect.quitting=Выход
+disconnect.endOfStream=Конец потока
+disconnect.overflow=Переполнение буфера
+```

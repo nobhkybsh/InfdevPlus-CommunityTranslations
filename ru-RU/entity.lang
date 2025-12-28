@@ -1,0 +1,31 @@
+```
+entity.Arrow.name=Стрела
+entity.Item.name=Предмет
+entity.Painting.name=Картина
+entity.ItemFrame.name=Рамка для предметов
+entity.PrimedTnt.name=Горящий ТНТ
+entity.FallingSand.name=Падающий блок
+entity.Minecart.name=Вагонетка
+entity.Boat.name=Лодка
+
+entity.Monster.name=Монстр
+entity.Creeper.name=Крипер
+entity.Skeleton.name=Скелет
+entity.Spider.name=Паук
+entity.Giant.name=Гигант
+entity.Zombie.name=Зомби
+entity.Slime.name=Слизень
+entity.Spectre.name=Призрак
+
+entity.Mob.name=Животное
+entity.Pig.name=Свинья
+entity.Sheep.name=Овца
+entity.Cow.name=Корова
+entity.Chicken.name=Курица
+
+entity.null.name=неизвестно
+
+death.generic=%1$s умер
+death.target=%1$s убил %2$s
+death.entity=%1$s был убит %2$s
+```
