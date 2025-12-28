@@ -1,0 +1,59 @@
+name: lang-release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          before='${{ github.event.before }}'
+          after='${{ github.event.after }}'
+
+          sudo apt-get update -y
+          sudo apt-get install -y zip
+
+          rm -rf out
+          mkdir -p out
+
+          mapfile -t roots < <(git diff --name-only "$before" "$after" | awk -F/ 'NF>1{print $1}' | sort -u)
+
+          for root in "${roots[@]}"; do
+            [[ -d "$root" ]] || continue
+
+            mapfile -t files < <(find "$root" -type f -name '*.lang' -print 2>/dev/null || true)
+            ((${#files[@]})) || continue
+
+            staging="$(mktemp -d)"
+            mkdir -p "$staging/lang"
+
+            for f in "${files[@]}"; do
+              rel="${f#"$root"/}"
+              mkdir -p "$staging/lang/$(dirname "$rel")"
+              cp "$f" "$staging/lang/$rel"
+            done
+
+            (cd "$staging" && zip -qr "$GITHUB_WORKSPACE/out/$root.zip" lang)
+            rm -rf "$staging"
+          done
+
+      - name: Publish
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: lang-latest
+          name: lang-latest
+          files: out/*.zip
+          fail_on_unmatched_files: false
